@@ -1,0 +1,75 @@
+[
+  {
+    "id": 1,
+    "name": "الباقة الأساسية",
+    "price": 6000.0,
+    "currency": "ريال",
+    "features": [
+      "جلسة تصوير ساعة واحدة",
+      "10 صور معدلة",
+      "تسليم خلال 3 أيام",
+      "صيغة عالية الجودة"
+    ],
+    "isPopular": false,
+    "isVip": false,
+    "isDiscount": false,
+    "discount_percent": 0,
+    "image": null
+  },
+  {
+    "id": 2,
+    "name": "الباقة المميزة",
+    "price": 1000.0,
+    "currency": "ريال",
+    "features": [
+      "جلسة تصوير ساعتين",
+      "25 صور معدلة",
+      "تسليم خلال يومين",
+      "ألبوم رقمي",
+      "3 لوكيشنات"
+    ],
+    "isPopular": true,
+    "isVip": false,
+    "isDiscount": true,
+    "discount_percent": 15,
+    "image": null
+  },
+  {
+    "id": 3,
+    "name": "باقة VIP",
+    "price": 2500.0,
+    "currency": "ريال",
+    "features": [
+      "جلسة تصوير 4 ساعات",
+      "50 صور معدلة",
+      "فيديو قصير",
+      "تسليم خلال 24 ساعة",
+      "ألبوم مطبوع",
+      "5 لوكيشنات",
+      "مكياج وتجهيز"
+    ],
+    "isPopular": false,
+    "isVip": true,
+    "isDiscount": false,
+    "discount_percent": 0,
+    "image": null
+  },
+  {
+    "id": 4,
+    "name": "باقة المناسبات",
+    "price": 3000.0,
+    "currency": "ريال",
+    "features": [
+      "تغطية كاملة للمناسبة",
+      "100+ صورة معدلة",
+      "فيديو احترافي",
+      "تسليم خلال أسبوع",
+      "ألبوم فاخر"
+    ],
+    "isPopular": false,
+    "isVip": false,
+    "isDiscount": true,
+    "discount_percent": 20,
+    "image": null
+  }
+]
