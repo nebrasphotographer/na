@@ -236,7 +236,7 @@
                 const slide = document.createElement('div');
                 slide.className = 'carousel-slide';
                 slide.innerHTML = `
-                    <img src="${item.url}" alt="${item.name}" class="w-full h-64 md:h-96 object-cover">
+                    <img src="${item.url}" alt="${item.name}" class="w-full h-64 md:h-96 object-fit">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
                     <div class="absolute bottom-4 right-4 text-right">
                         <h3 class="text-white text-xl font-bold">${item.name}</h3>
@@ -339,17 +339,24 @@
             });
         }
 
-        function filterByCategory(category) {
+        async function filterByCategory(category) {
             console.log(category,"cat")
+           let all_cat=await fetchData("all_categories","images")
+
+
+            
             currentCategory = category;
+
+            const Media=await fetchData("all_media","images")
+
 
             // Update active state
             document.querySelectorAll('#category-filters .filter-btn').forEach(btn => {
                 btn.classList.toggle('active', btn.dataset.category === category);
             });
 
-
-            updateGallery(filteredMedia);
+            const currenMeddia=Media.map(item=>{if (currentCategory==="all"||item.category.includes(currentCategory)){return item}}).filter(item=>item!==undefined);
+            updateGallery(currenMeddia);
         }
 
         function sortMedia(media, sortType) {
@@ -393,13 +400,13 @@
                              style="animation-delay: ${index * 0.1}s"
                              onclick="openLightbox(${index})">
                             ${item.media_type === 'video'
-                                ? `<video src="${item.url}" class="w-full h-64 object-cover" muted></video>
+                                ? `<video src="${item.url}" class="w-full h-64 object-fit" muted></video>
                                    <div class="absolute inset-0 flex items-center justify-center">
                                        <div class="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
                                            <i class="fas fa-play text-white text-xl"></i>
                                        </div>
                                    </div>`
-                                : `<img src="${item.url??""}" alt="${item.name}" class="w-full h-64 object-cover lazy-load" loading="lazy" onload="this.classList.add('loaded')">`
+                                : `<img src="${item.url??""}" alt="${item.name}" class="w-full h-64 object-fit lazy-load" loading="lazy" onload="this.classList.add('loaded')">`
                             }
                             <div class="media-overlay flex flex-col justify-end p-4">
                                 <h3 class="text-white font-bold text-lg">${item.name}</h3>
@@ -415,8 +422,8 @@
                              onclick="openLightbox(${index})">
                             <div class="w-32 h-32 md:w-48 md:h-32 flex-shrink-0">
                                 ${item.media_type === 'video'
-                                    ? `<video src="${item.url??""}" class="w-full h-full object-cover" muted></video>`
-                                    : `<img src="${item.url??""}" alt="${item.name}" class="w-full h-full object-cover lazy-load" loading="lazy" onload="this.classList.add('loaded')">`
+                                    ? `<video src="${item.url??""}" class="w-full h-full object-fit" muted></video>`
+                                    : `<img src="${item.url??""}" alt="${item.name}" class="w-full h-full object-fit lazy-load" loading="lazy" onload="this.classList.add('loaded')">`
                                 }
                             </div>
                             <div class="flex-1 p-4 flex flex-col justify-center">
