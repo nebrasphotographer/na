@@ -214,6 +214,16 @@
 
                 <!-- Contact Cards -->
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-12">
+
+
+                    <a id="contact-phone" href="#" target="_blank" class="bg-white/5 rounded-2xl p-6 border border-white/10 hover:border-green-500/50 transition-all group">
+                        <div class="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                            <i class="fa fa-phone text-blue-500 text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">هاتف</h3>
+                        <p class="text-white/60" id="contact-phone-number"></p>
+                    </a>
+
                     <a id="contact-whatsapp" href="#" target="_blank" class="bg-white/5 rounded-2xl p-6 border border-white/10 hover:border-green-500/50 transition-all group">
                         <div class="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                             <i class="fab fa-whatsapp text-green-500 text-3xl"></i>
@@ -471,7 +481,9 @@
                 { platform: 'whatsapp', url: `https://wa.me/${PhotographerInfo.whatsapp.replace(/[^0-9]/g, '')}`, icon: 'fab fa-whatsapp' },
                 { platform: 'instagram', url: `https://instagram.com/${PhotographerInfo.instagram}`, icon: 'fab fa-instagram' },
                 { platform: 'facebook', url: `https://facebook.com/${PhotographerInfo.facebook}`, icon: 'fab fa-facebook-f' },
-                { platform: 'email', url: `mailto:${PhotographerInfo.email}`, icon: 'fas fa-envelope' }
+                { platform: 'email', url: `mailto:${PhotographerInfo.email}`, icon: 'fas fa-envelope' },
+                { platform: 'phone', url: `tel:${PhotographerInfo.phone}`, icon: 'fa fa-phone' }
+
             ];
 
             socialLinks.forEach(link => {
@@ -487,6 +499,8 @@
             });
 
             // Contact section
+             document.getElementById('contact-phone').href = `tel:${PhotographerInfo.whatsapp.replace(/[^0-9]/g, '')}`;
+            document.getElementById('contact-phone-number').textContent = PhotographerInfo.whatsapp;
             document.getElementById('contact-whatsapp').href = `https://wa.me/${PhotographerInfo.whatsapp.replace(/[^0-9]/g, '')}`;
             document.getElementById('contact-whatsapp-number').textContent = PhotographerInfo.whatsapp;
             document.getElementById('contact-email-link').href = `mailto:${PhotographerInfo.email}`;
