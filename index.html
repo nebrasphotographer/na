@@ -115,7 +115,7 @@
                 </div>
 
                 <!-- Hero Image/Carousel -->
-                <div class="lg:w-1/2 animate-fade-in-up stagger-4">
+                <div class="lg:w-1/2 animate-fade-in-up mb-2 stagger-4">
                     <div class="carousel-container rounded-2xl overflow-hidden shadow-2xl" id="hero-carousel">
                         <div class="carousel-track" id="hero-carousel-track">
                             <!-- Slides will be injected here -->
@@ -146,7 +146,7 @@
                         <div class="w-64 h-64 md:w-80 md:h-80 mx-auto rounded-full overflow-hidden border-4 border-primary shadow-2xl">
                             <img id="profile-image" src="" alt="المصور" class="w-full h-full object-cover">
                         </div>
-                        <div class="absolute -bottom-4 -right-4 w-20 h-20 bg-accent rounded-full flex items-center justify-center animate-float">
+                        <div class="absolute -bottom-4 -right-4 w-20 h-20 bg-primary rounded-full flex items-center justify-center animate-float">
                             <i class="fas fa-camera text-2xl text-white"></i>
                         </div>
                     </div>
@@ -388,9 +388,9 @@
 
             featuredMedia.forEach((item, index) => {
                 const slide = document.createElement('div');
-                slide.className = 'carousel-slide';
+                slide.className = 'carousel-slide  bg-primary/50';
                 slide.innerHTML = `
-                    <img src="${item.url}" alt="${item.name}" class="w-full h-64 md:h-96 object-fit">
+                    <img src="${item.url}" alt="${item.name}" class="w-full aspect-[1/1] object-cover">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
                     <div class="absolute bottom-4 right-4 text-right">
                         <h3 class="text-white text-xl font-bold">${item.name}</h3>
