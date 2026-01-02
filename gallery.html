@@ -18,9 +18,16 @@
             <div class="flex items-center justify-between py-4">
                 <!-- Logo -->
                 <a href="index.html#home" class="flex items-center gap-3">
+                    
+                    
+                    <div class="w-12 h-12 rounded-full  border-primary border-1 bg-primary-light/20 flex items-center justify-center">
+                    <img src="profile/logo.png" alt="">
+                    </div>
+<!-- 
                     <div class="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center">
                         <i class="fas fa-camera text-white text-xl"></i>
                     </div>
+                     -->
                     <span class="text-xl font-bold text-white" id="header-logo-text">معرض المصوّر</span>
                 </a>
 
@@ -126,11 +133,20 @@
         <div class="container mx-auto px-4">
             <div class="flex flex-col md:flex-row items-center justify-between gap-4">
                 <p class="text-white/50 text-sm">
-                    © 2025 <span id="footer-name"></span>. جميع الحقوق محفوظة.
+                    © <script>
+                        const year = new Date(Date.now()).getFullYear();
+                        document.write(year)
+                        </script>
+                         <span id="footer-name"></span>. جميع الحقوق محفوظة.
                 </p>
+
+
                 <div class="flex gap-4" id="footer-social">
                     <!-- Social links will be injected here -->
                 </div>
+
+                <p onclick="window.open('tel:+967772024038','_blank')" class="text-sm cursor-pointer text-primary">م / ابراهيم الجداوي</p>
+
             </div>
         </div>
     </footer>
@@ -341,19 +357,31 @@
 
         async function filterByCategory(category) {
             console.log(category,"cat")
-           let all_cat=await fetchData("all_categories","images")
-
-
+            
+            
             
             currentCategory = category;
-
-            const Media=await fetchData("all_media","images")
-
+            let cleanname;
+            
+            
+            
+            if(currentCategory!="all"){
+            const all_cat=await fetchData("all_categories","images")
+            const {data,name}=all_cat.filter(item=>item.name==category)[0]
+            cleanname=data.replace("/data/images/","").replace(".json","")
+            console.log(cleanname)
+        }
+        else{
+            cleanname="all_media"
+            }
+            
 
             // Update active state
             document.querySelectorAll('#category-filters .filter-btn').forEach(btn => {
                 btn.classList.toggle('active', btn.dataset.category === category);
             });
+
+            const Media=await fetchData(cleanname,"images")
 
             const currenMeddia=Media.map(item=>{if (currentCategory==="all"||item.category.includes(currentCategory)){return item}}).filter(item=>item!==undefined);
             updateGallery(currenMeddia);
@@ -530,6 +558,11 @@
         // ========== INITIALIZE ==========
         document.addEventListener('DOMContentLoaded', async () => {
             const Media=await fetchData("all_media","images")
+            const PhotographerInfo= await fetchData("photographer_info")
+
+            document.getElementById('header-logo-text').textContent = PhotographerInfo.name;
+
+            
             init_filter(Media)
             const all_cat=await getAllCategories()
 

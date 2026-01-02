@@ -21,9 +21,18 @@
             <div class="flex items-center justify-between py-4">
                 <!-- Logo -->
                 <a href="#home" class="flex items-center gap-3">
-                    <div class="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center">
-                        <i class="fas fa-camera text-white text-xl"></i>
+                   
+                    
+
+                       <div class="w-12 h-12 rounded-full  border-primary border-1 bg-primary-light/20 flex items-center justify-center">
+                    <img src="profile/logo.png" alt="">
                     </div>
+
+
+                    <!-- <div class="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center">
+                        <i class="fas fa-camera text-white text-xl"></i>
+                    </div> -->
+
                     <span class="text-xl font-bold text-white" id="header-logo-text">معرض المصوّر</span>
                 </a>
 
@@ -235,12 +244,19 @@
     <footer class="py-8 bg-black/80 border-t border-white/10">
         <div class="container mx-auto px-4">
             <div class="flex flex-col md:flex-row items-center justify-between gap-4">
-                <p class="text-white/50 text-sm">
-                    © 2025 <span id="footer-name"></span>. جميع الحقوق محفوظة.
+                 <p class="text-white/50 text-sm">
+                    © <script>
+                        const year = new Date(Date.now()).getFullYear();
+                        document.write(year)
+                        </script>
+                         <span id="footer-name"></span>. جميع الحقوق محفوظة.
                 </p>
+
+                
                 <div class="flex gap-4" id="footer-social">
                     <!-- Social links will be injected here -->
                 </div>
+                <p onclick="window.open('tel:+967772024038','_blank')" class="text-sm cursor-pointer text-primary">م / ابراهيم الجداوي</p>
             </div>
         </div>
     </footer>
@@ -517,10 +533,61 @@
             });
         }, observerOptions);
 
+
+        function renderMeta(Photgrapher){
+
+            //          <meta property="og:title" content="نبراس للتصوير - معرض الأعمال" />
+    // <meta property="og:description" content="معرض أعمال نبراس للتصوير الفوتوغرافي" />
+    // <meta property="og:type" content="website" />
+    // <meta property="og:image" content="https://kesjysedjbjcgxjcygqv.supabase.co/storage/v1/object/public/avatars/1764103307485-nebr.jpg" />
+
+    // <link rel="shortcut icon" href="/icons/logo.png" type="image/x-icon">
+    // <meta name="twitter:card" content="summary_large_image" />
+    // <meta name="twitter:image" content="https://kesjysedjbjcgxjcygqv.supabase.co/storage/v1/object/public/avatars/1764103307485-nebr.jpg" />
+  
+
+
+
+
+            let meta=document.createElement("meta")
+            meta.setAttribute("property","og:title")
+
+         
+            meta.content=` ${Photgrapher.name} - معرض تصوير`
+            document.head.appendChild(meta)
+
+            meta=null
+            meta=document.createElement("meta")
+            meta.setAttribute("property","og:description")  
+            meta.content=` ${Photgrapher.description} `
+            document.head.appendChild(meta)
+
+            meta=null
+            meta=document.createElement("meta")
+            meta.setAttribute("property","og:type")
+            meta.content=`website`
+            document.head.appendChild(meta)
+
+            meta=null
+            meta=document.createElement("meta")
+            meta.setAttribute("property","og:image")
+            meta.content=`${location.origin}${Photgrapher.profile_pic}`
+            document.head.appendChild(meta)
+
+
+        }
+
         // ========== INITIALIZE ==========
         document.addEventListener('DOMContentLoaded',async () => {
-            // let photgrapher=await fetchData("photographer_info")
+
+    
+            
+
+
+            
+            const Photgrapher=await fetchData("photographer_info")
             initHeroCarousel();
+            renderMeta(Photgrapher);
             // initCategoryFilters();
             // updateGallery();
             // renderPackages();
