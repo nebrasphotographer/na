@@ -1,0 +1,607 @@
+<!DOCTYPE html><html lang="ar" dir="rtl" class="dark"><head><meta name="x-poe-datastore-behavior" content="local_only"><meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://code.jquery.com https://unpkg.com https://d3js.org https://threejs.org https://cdn.plot.ly https://stackpath.bootstrapcdn.com https://maps.googleapis.com https://cdn.tailwindcss.com https://ajax.googleapis.com https://kit.fontawesome.com https://cdn.datatables.net https://maxcdn.bootstrapcdn.com https://code.highcharts.com https://tako-static-assets-production.s3.amazonaws.com https://www.youtube.com https://fonts.googleapis.com https://fonts.gstatic.com https://pfst.cf2.poecdn.net https://puc.poecdn.net https://i.imgur.com https://wikimedia.org https://*.icons8.com https://*.giphy.com https://picsum.photos https://images.unsplash.com; frame-src 'self' https://www.youtube.com https://trytako.com; child-src 'self'; manifest-src 'self'; worker-src 'self'; upgrade-insecure-requests; block-all-mixed-content;">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+<meta property="og:title" content=" نبراس العزي - معرض تصوير">
+<meta property="og:description" content=" مصورة محترفة متخصصة في التصوير الفوتوغرافي والفيديو. خبرة تزيد عن 5 سنوات في تصوير المناسبات والبورتريه والمنتجات. أسعى دائماً لتقديم أفضل جودة وإبداع في كل عمل أقدمه. ">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://nebrasphoto.netlify.app/profile/nebr.jpg">
+    <meta name="theme-color" content="#3B6E74">
+
+    
+    <title>معرض المصوّر</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/output.min.css">
+   <link rel="stylesheet" href="assets/css/style.css">
+   
+   <script src="assets/js/main.js">  </script>
+</head>
+<body class="dark bg-black text-white min-h-screen">
+    <!-- ==================== DATA ==================== -->
+
+    <!-- ==================== HEADER ==================== -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 header-blur bg-transparent">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between py-2">
+                <!-- Logo -->
+                <a href="index.html#home" class="flex items-center gap-3">
+                    
+                    
+                    <div class="w-12 h-12 rounded-full  border-primary border-1 bg-primary-light/20 flex items-center justify-center">
+                    <img src="profile/logo.png" alt="">
+                    </div>
+<!-- 
+                    <div class="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center">
+                        <i class="fas fa-camera text-white text-xl"></i>
+                    </div>
+                     -->
+                    <span class="text-[14px] border-b-primary/50  pb-1 border-b-2 font-bold text-white" id="header-logo-text">معرض المصوّر</span>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden lg:flex items-center gap-8">
+                    <a href="index.html#home" class="nav-link text-white/90 hover:text-white">الرئيسية</a>
+                    <a href="gallery.html" class="nav-link text-white/90 hover:text-white">المعرض</a>
+                    <a href="packages.html" class="nav-link text-white/90 hover:text-white">الباقات</a>
+                    <a href="index.html#how-we-work" class="nav-link text-white/90 hover:text-white">كيف نعمل</a>
+                    <a href="index.html#about" class="nav-link text-white/90 hover:text-white">عن المصور</a>
+                    <a href="index.html#policies" class="nav-link text-white/90 hover:text-white">الشروط</a>
+                    <a href="index.html#contact" class="nav-link text-white/90 hover:text-white">تواصل</a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="lg:hidden text-white text-2xl">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-overlay" class="mobile-overlay"></div>
+    <div id="mobile-menu" class="mobile-menu">
+        <div class="flex justify-between items-center mb-8">
+            <span class="text-xl font-bold">القائمة</span>
+            <button id="close-mobile-menu" class="text-2xl text-white/70 hover:text-white">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <nav class="flex flex-col gap-4">
+            <a href="index.html#home" class="mobile-nav-link text-lg py-2 border-b border-white/10">الرئيسية</a>
+            <a href="gallery.html" class="mobile-nav-link text-lg py-2 border-b border-white/10">المعرض</a>
+            <a href="packages.html" class="mobile-nav-link text-lg py-2 border-b border-white/10">الباقات</a>
+            <a href="index.html#how-we-work" class="mobile-nav-link text-lg py-2 border-b border-white/10">كيف نعمل</a>
+            <a href="index.html#about" class="mobile-nav-link text-lg py-2 border-b border-white/10">عن المصور</a>
+            <a href="index.html#policies" class="mobile-nav-link text-lg py-2 border-b border-white/10">الشروط</a>
+            <a href="index.html#contact" class="mobile-nav-link text-lg py-2 border-b border-white/10">تواصل</a>
+        </nav>
+    </div>
+
+ 
+    <!-- ==================== GALLERY SECTION ==================== -->
+    <section id="gallery" class="py-20 bg-black/50">
+        <div class="container mx-auto px-4">
+
+            <div class="lg:w-full mx-auto mt-5 mb-20 animate-fade-in-up stagger-4">
+                    <div class="carousel-container rounded-2xl  overflow-hidden shadow-2xl" id="hero-carousel">
+                        <div class="carousel-track" id="hero-carousel-track">
+                            <!-- Slides will be injected here -->
+                        </div>
+                        <button class="carousel-btn prev" id="hero-prev"><i class="fas fa-chevron-right"></i></button>
+                        <button class="carousel-btn next" id="hero-next"><i class="fas fa-chevron-left"></i></button>
+                        <div class="absolute -bottom-0 left-1/2 transform -translate-x-1/2 flex gap-2" id="hero-dots"></div>
+                    </div>
+                </div>
+            <!-- Section Header -->
+            <div class="text-center mb-12">
+                <h2 class="section-title text-3xl md:text-4xl font-bold mb-4">معرض الأعمال</h2>
+                <p class="text-white/60 mt-6">استعرض مجموعة من أفضل أعمالنا</p>
+            </div>
+
+            <!-- Filters & Controls -->
+            <div class="flex flex-col md:flex-row items-center justify-between gap-4 mb-8">
+                <!-- Category Filters -->
+                <div class="flex flex-wrap gap-2 justify-center" id="category-filters">
+                    <button onclick="filterByCategory('all')" class="filter-btn active px-4 py-2 rounded-full text-sm" data-category="all">الكل</button>
+                </div>
+
+                <!-- Sort & View Controls -->
+                <div class="flex items-center gap-4">
+                    <!-- Sort -->
+                    <select id="sort-select" class="bg-white/10 border border-white/20 rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-primary">
+                        <option value="newest">الأحدث</option>
+                        <option value="oldest">الأقدم</option>
+                    </select>
+
+                    <!-- View Toggle -->
+                    <div class="flex bg-white/10 rounded-lg p-1">
+                        <button class="view-btn active px-3 py-1 rounded text-sm" data-view="grid">
+                            <i class="fas fa-th-large"></i>
+                        </button>
+                        <button class="view-btn px-3 py-1 rounded text-sm" data-view="list">
+                            <i class="fas fa-list"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <!-- Items will be injected here -->
+            </div>
+        </div>
+    </section>
+
+ 
+  
+   
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="py-8 bg-black/80 border-t border-white/10">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                <p class="text-white/50 text-sm">
+                    © <script>
+                        const year = new Date(Date.now()).getFullYear();
+                        document.write(year)
+                        </script>
+                         <span id="footer-name"></span>. جميع الحقوق محفوظة.
+                </p>
+
+
+                <div class="flex gap-4" id="footer-social">
+                    <!-- Social links will be injected here -->
+                </div>
+
+                <p onclick="window.open('tel:+967772024038','_blank')" class="text-sm cursor-pointer text-primary">م / ابراهيم الجداوي</p>
+
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==================== LIGHTBOX ==================== -->
+    <div id="lightbox" class="lightbox">
+        <button id="lightbox-close" class="absolute top-4 left-4 text-white text-3xl hover:text-primary transition-colors z-10">
+            <i class="fas fa-times"></i>
+        </button>
+        <button id="lightbox-prev" class="carousel-btn prev"><i class="fas fa-chevron-right"></i></button>
+        <button id="lightbox-next" class="carousel-btn next"><i class="fas fa-chevron-left"></i></button>
+        <div id="lightbox-content" class="lightbox-content">
+            <!-- Content will be injected here -->
+        </div>
+        <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-center">
+            <p id="lightbox-title" class="text-white text-lg font-bold mb-1"></p>
+            <p id="lightbox-description" class="text-white/60 text-sm"></p>
+        </div>
+    </div>
+
+    <!-- ==================== JAVASCRIPT ==================== -->
+    <script>
+        // ========== UTILITY FUNCTIONS ==========
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            return date.toLocaleDateString('ar-SA', { year: 'numeric', month: 'long', day: 'numeric' });
+        }
+
+        // ========== DARK MODE ==========
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            if (event.matches) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        });
+
+        // ========== HEADER SCROLL EFFECT ==========
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('header-scrolled','border-b-2','rounded-lg','border-b-primary');
+            } else {
+                header.classList.remove('header-scrolled','border-b-2','rounded-lg','border-b-primary');
+            }
+        });
+
+        // ========== MOBILE MENU ==========
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const closeMobileMenu = document.getElementById('close-mobile-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileOverlay = document.getElementById('mobile-overlay');
+
+        function openMobileMenu() {
+            mobileMenu.classList.add('active');
+            mobileOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMobileMenuFunc() {
+            mobileMenu.classList.remove('active');
+            mobileOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        mobileMenuBtn.addEventListener('click', openMobileMenu);
+        closeMobileMenu.addEventListener('click', closeMobileMenuFunc);
+        mobileOverlay.addEventListener('click', closeMobileMenuFunc);
+
+        // Close menu on link click
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', closeMobileMenuFunc);
+        });
+
+        // ========== SMOOTH SCROLL ==========
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // ========== HERO CAROUSEL ==========
+        let heroCurrentSlide = 0;
+        const heroTrack = document.getElementById('hero-carousel-track');
+        const heroDotsContainer = document.getElementById('hero-dots');
+
+       async function initHeroCarousel(Media) {
+
+           
+           const featuredMedia = Media.filter(item=>item.special);
+           console.log("init",featuredMedia)
+            
+
+            featuredMedia.forEach((item, index) => {
+                console.log("index",index,":",item.url)
+                const slide = document.createElement('div');
+                slide.className = 'carousel-slide relative';
+                // slide.style.backgroundImage=`url(${item.url})`
+                let image=document.createElement("img")
+                image.classList.add("absolute",'left-0','top-0',"w-full","h-full","backdrop-blur-md",'z-0','object-cover')
+                image.src=item.url
+                image.style.filter='blur(25px)'
+
+                
+
+                slide.innerHTML = `
+                    <img src="${item.url}" alt="${item.name}" class="w-full relative z-10 md:max-h-[90vh] max-h-[50vh] h-screen    aspect-[1/5] object-contain">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                    <div class="absolute bottom-4 right-4 text-right">
+                        <h3 class="text-white text-xl font-bold">${item.name}</h3>
+                        <p class="text-white/70 text-sm">${item.description}</p>
+                    </div>
+                `;
+                heroTrack.appendChild(slide);
+                slide.append(image)
+
+
+                // Create dot
+                const dot = document.createElement('button');
+                dot.className = `w-2 h-2 rounded-full transition-all ${index === 0 ? 'bg-primary w-6' : 'bg-white/50'}`;
+                dot.addEventListener('click', () => goToHeroSlide(index));
+                heroDotsContainer.appendChild(dot);
+            });
+        }
+
+        function goToHeroSlide(index) {
+            const slides = heroTrack.querySelectorAll('.carousel-slide');
+            heroCurrentSlide = index;
+            if (heroCurrentSlide >= slides.length) heroCurrentSlide = 0;
+            if (heroCurrentSlide < 0) heroCurrentSlide = slides.length - 1;
+
+            heroTrack.style.transform = `translateX(${heroCurrentSlide * 100}%)`;
+
+            // Update dots
+            const dots = heroDotsContainer.querySelectorAll('button');
+            dots.forEach((dot, i) => {
+                if (i === heroCurrentSlide) {
+                    dot.className = 'w-6 h-2 rounded-full bg-primary transition-all';
+                } else {
+                    dot.className = 'w-2 h-2 rounded-full bg-white/50 transition-all';
+                }
+            });
+        }
+
+        document.getElementById('hero-prev').addEventListener('click', () => goToHeroSlide(heroCurrentSlide - 1));
+        document.getElementById('hero-next').addEventListener('click', () => goToHeroSlide(heroCurrentSlide + 1));
+
+        // Auto slide
+        setInterval(() => goToHeroSlide(heroCurrentSlide + 1), 5000);
+
+        // Touch swipe for hero carousel
+        let heroTouchStartX = 0;
+        let heroTouchEndX = 0;
+
+        heroTrack.addEventListener('touchstart', (e) => {
+            heroTouchStartX = e.changedTouches[0].screenX;
+        });
+
+        heroTrack.addEventListener('touchend', (e) => {
+            heroTouchEndX = e.changedTouches[0].screenX;
+            if (heroTouchStartX - heroTouchEndX > 50) {
+                goToHeroSlide(heroCurrentSlide + 1);
+            } else if (heroTouchEndX - heroTouchStartX > 50) {
+                goToHeroSlide(heroCurrentSlide - 1);
+            }
+        });
+
+        // ========== GALLERY ==========
+        let currentView = 'grid';
+        let currentCategory = 'all';
+        let currentSort = 'newest';
+        let filteredMedia = []
+
+
+
+         function init_filter(media) {
+            filteredMedia=[...media]
+        }
+
+       async function getAllCategories(Media) {
+        const allCat=await fetchData("all_categories","images")
+            
+            const categories = new Set();
+
+             allCat.forEach(item=>{
+                console.log(item.name)
+            categories.add(item.name)
+        })
+
+            // Media.forEach(item => {
+            //     item.category.forEach(cat => categories.add(cat));
+            // });
+            let arr=Array.from(categories)
+            console.log("arr:",arr)
+            return arr;
+        }
+
+         function initCategoryFilters(Media,allcat) {
+            const container = document.getElementById('category-filters');
+            const categories = allcat;
+
+            categories.forEach(cat => {
+                const btn = document.createElement('button');
+                btn.className = 'filter-btn px-4 py-2 rounded-full text-sm';
+                btn.dataset.category = cat;
+                btn.textContent = cat;
+                btn.addEventListener('click', () => filterByCategory(cat));
+                container.appendChild(btn);
+            });
+        }
+
+        async function filterByCategory(category) {
+            console.log(category,"cat")
+            
+            
+            
+            currentCategory = category;
+            let cleanname;
+            
+            
+            
+            if(currentCategory!="all"){
+            const all_cat=await fetchData("all_categories","images")
+            const {data,name}=all_cat.filter(item=>item.name==category)[0]
+            cleanname=data.replace("/data/images/","").replace(".json","")
+            console.log(cleanname)
+        }
+        else{
+            cleanname="all_media"
+            }
+            
+
+            // Update active state
+            document.querySelectorAll('#category-filters .filter-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.category === category);
+            });
+
+            const Media=await fetchData(cleanname,"images")
+
+            const currenMeddia=Media.map(item=>{if (currentCategory==="all"||item.category.includes(currentCategory)){return item}}).filter(item=>item!==undefined);
+            updateGallery(currenMeddia);
+        }
+
+        function sortMedia(media, sortType) {
+            return [...media].sort((a, b) => {
+                const dateA = new Date(a.date);
+                const dateB = new Date(b.date);
+                return sortType === 'newest' ? dateB - dateA : dateA - dateB;
+            });
+        }
+
+       async function updateGallery(Media) {
+            // Filter
+            if (currentCategory === 'all') {
+                filteredMedia = [...Media];
+            } else {
+
+                filteredMedia = Media.filter(item => item.category.includes(currentCategory));
+            }
+
+            // Sort
+            filteredMedia = sortMedia(filteredMedia, currentSort);
+
+            renderGallery();
+        }
+
+        function renderGallery() {
+            console.log("filtered",filteredMedia)
+            const grid = document.getElementById('gallery-grid');
+
+            if (currentView === 'grid') {
+                grid.className = 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6';
+            } else {
+                grid.className = 'flex flex-col gap-4';
+            }
+
+
+            grid.innerHTML = filteredMedia.map((item, index) => {
+                if (currentView === 'grid') {
+                    return `
+                        <div class="media-item card-hover cursor-pointer opacity-0 animate-fade-in-up"
+                             style="animation-delay: ${index * 0.1}s"
+                             onclick="openLightbox(${index})">
+                            ${item.media_type === 'video'
+                                ? `<video src="${item.url}" class="w-full  aspect-square object-cover" muted></video>
+                                   <div class="absolute inset-0 flex items-center justify-center">
+                                       <div class="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
+                                           <i class="fas fa-play text-white text-xl"></i>
+                                       </div>
+                                   </div>`
+                                : `<img src="${item.url??""}" alt="${item.name}" class="w-full  aspect-square object-cover lazy-load" loading="lazy" onload="this.classList.add('loaded')">`
+                            }
+                            <div class="media-overlay flex flex-col justify-end p-4">
+                                <h3 class="text-white font-bold text-lg">${item.name}</h3>
+                                <p class="text-white/70 text-sm">${item.category.join(' • ')}</p>
+                                <p class="text-white/50 text-xs mt-1">${formatDate(item.date)}</p>
+                            </div>
+                        </div>
+                    `;
+                } else {
+                    return `
+                        <div class="flex bg-white/5 rounded-xl overflow-hidden cursor-pointer card-hover opacity-0 animate-fade-in-up"
+                             style="animation-delay: ${index * 0.1}s"
+                             onclick="openLightbox(${index})">
+                            <div class="w-32 h-32 md:w-48 md:h-32 flex-shrink-0">
+                                ${item.media_type === 'video'
+                                    ? `<video src="${item.url??""}" class="w-full h-full object-cover" muted></video>`
+                                    : `<img src="${item.url??""}" alt="${item.name}" class="w-full h-full object-cover lazy-load" loading="lazy" onload="this.classList.add('loaded')">`
+                                }
+                            </div>
+                            <div class="flex-1 p-4 flex flex-col justify-center">
+                                <h3 class="text-white font-bold text-lg mb-1">${item.name}</h3>
+                                <p class="text-white/70 text-sm mb-2">${item.description}</p>
+                                <div class="flex items-center gap-4 text-sm">
+                                    <span class="text-primary">${item.category.join(' • ')}</span>
+                                    <span class="text-white/50">${formatDate(item.date)}</span>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                }
+            }).join('');
+        }
+
+        // Sort change
+        document.getElementById('sort-select').addEventListener('change', (e) => {
+            currentSort = e.target.value;
+            updateGallery(filteredMedia);
+        });
+
+        // View toggle
+        document.querySelectorAll('.view-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                currentView = btn.dataset.view;
+                document.querySelectorAll('.view-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                renderGallery();
+            });
+        });
+
+        // ========== LIGHTBOX ==========
+        let lightboxCurrentIndex = 0;
+
+        function openLightbox(index) {
+            lightboxCurrentIndex = index;
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            updateLightboxContent();
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function updateLightboxContent() {
+            const item = filteredMedia[lightboxCurrentIndex];
+            const content = document.getElementById('lightbox-content');
+
+            if (item.media_type === 'video') {
+                content.innerHTML = `<video src="${item.url}" class="max-w-full max-h-[80vh] rounded-lg" controls autoplay></video>`;
+            } else {
+                content.innerHTML = `<img src="${item.url}" alt="${item.name}" class="max-w-full max-h-[80vh] rounded-lg object-cover">`;
+            }
+
+            document.getElementById('lightbox-title').textContent = item.name;
+            document.getElementById('lightbox-description').textContent = item.description;
+        }
+
+        function navigateLightbox(direction) {
+            lightboxCurrentIndex += direction;
+            if (lightboxCurrentIndex >= filteredMedia.length) lightboxCurrentIndex = 0;
+            if (lightboxCurrentIndex < 0) lightboxCurrentIndex = filteredMedia.length - 1;
+            updateLightboxContent();
+        }
+
+        document.getElementById('lightbox-close').addEventListener('click', closeLightbox);
+        document.getElementById('lightbox-prev').addEventListener('click', () => navigateLightbox(-1));
+        document.getElementById('lightbox-next').addEventListener('click', () => navigateLightbox(1));
+
+        // Close on background click
+        document.getElementById('lightbox').addEventListener('click', (e) => {
+            if (e.target.id === 'lightbox') closeLightbox();
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (!document.getElementById('lightbox').classList.contains('active')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowRight') navigateLightbox(-1);
+            if (e.key === 'ArrowLeft') navigateLightbox(1);
+        });
+
+        // Touch swipe for lightbox
+        let lightboxTouchStartX = 0;
+        document.getElementById('lightbox-content').addEventListener('touchstart', (e) => {
+            lightboxTouchStartX = e.changedTouches[0].screenX;
+        });
+        document.getElementById('lightbox-content').addEventListener('touchend', (e) => {
+            const touchEndX = e.changedTouches[0].screenX;
+            if (lightboxTouchStartX - touchEndX > 50) {
+                navigateLightbox(1);
+            } else if (touchEndX - lightboxTouchStartX > 50) {
+                navigateLightbox(-1);
+            }
+        });
+
+        // ========== PACKAGES ==========
+      
+        // ========== INITIALIZE ==========
+        document.addEventListener('DOMContentLoaded', async () => {
+            const Media=await fetchData("all_media","images")
+            const PhotographerInfo= await fetchData("photographer_info")
+
+            document.getElementById('header-logo-text').textContent = PhotographerInfo.name;
+
+            
+            init_filter(Media)
+            const all_cat=await getAllCategories()
+
+
+            initHeroCarousel(Media);
+            initCategoryFilters(Media,all_cat);
+           await updateGallery(Media);
+            // renderPackages();
+            // renderSteps();
+            // renderPhotographerInfo();
+            // renderPolicies();
+
+            // Observe animated elements
+            setTimeout(() => {
+                document.querySelectorAll('.animate-fade-in-up').forEach(el => {
+                    el.style.opacity = '1';
+                });
+            }, 100);
+        });
+    </script>
+
+
+
+</body></html>
