@@ -165,7 +165,7 @@
     <section id="packages" class="py-20 relative">
         <div class="absolute inset-0 bg-gradient-to-b from-black/50 to-transparent"></div>
         <div class="container px-4 md:mx-auto md:px-4 relative z-10">
-           <div class=" my-2 px-1 flex flex-col gap-4" id="account-container"></div>
+           <div class=" my-2 px-1 flex flex-col md:flex-row gap-4" id="account-container"></div>
 
             <!-- Section Header -->
             <div class="text-center mb-12">
@@ -191,7 +191,11 @@
     </section>
 
    
-    <div class="bg-purple-500 hidden"></div>
+    <div class="bg-purple-500 hidden
+    
+    text-purple-400
+    
+    "></div>
 
    
     <!-- ==================== FOOTER ==================== -->
@@ -312,16 +316,47 @@
             console.log(accounts)
             const container=document.getElementById("account-container")
             const how=document.createElement("div")
-            how.classList.add("mb-4","pb-2")
+            how.classList.add("mb-4","pb-2","flex","justify-between",'w-full',"flex-col","md:flex-row","gap-10")
 
+            function renderAc(ele){
+
+
+                
             const howtobooking=`
+
+ 
             
-            <div class="text-primary-light font-bold my-1">طريقة الحجز:</div>
-            <p classe="mb-4"> 
-رسالة تحتوي على تاريخ المناسبة + موقع المناسبة 
-تسليم عربون نص المبلغ عبر حسابات :</p>
-            
-            `
+<div>
+<div class="text-primary-light font-bold my-1">طريقة الحجز:</div>
+<ul classe="mb-4"> 
+<li class="text-[12px]"> رسالة تحتوي على تاريخ المناسبة مع موقع المناسبة</li>
+<li class="text-[12px]">
+تسليم عربون نص المبلغ عبر حسابات</li>
+
+<li>${ele}</li>
+
+ </ul>
+</div>
+
+
+<div>
+ <p class="text-primary-light font-bold my-1">ملاحظات:</p>
+ <ul>
+<li class="text-[12px]"> سعر الساعة الإضافية ب 10 الف ريال</li>
+<li class="text-[12px]">فترة تسليم الصور من شهر  الى شهرين </li>
+<li class="text-[12px]">تسليم الصور المستعجله خلال 10 ايام زيادة 10 الف.</li>
+<li class="text-[12px]">تصوير منفرد لغير الصور الجماعية زيادة 1000 ريال.</li>
+<li class="text-[12px]">يتم الاحتفاظ بنسخة من الصور لمدة ستة اشهر من تاريخ المناسبة.</li>
+</ul>
+</div>
+
+`
+
+
+
+                return howtobooking
+                
+            }
 
             let elements=accounts.map(account=>{
 
@@ -390,9 +425,7 @@
 
             ).join("<div>أو:</div>")
 
-            how.innerHTML=`${howtobooking}
-        ${elements}
-            `
+            how.innerHTML=renderAc(elements)
 
             
 
@@ -485,7 +518,7 @@ function filterPackagesByType(packages, typeKey) {
                     <div class="flex flex-col" >
                         ${features.map((cell, cellIdx) => `
                             <div class=" p-1 flex gap-2 text-white text-right ${cellIdx % 2 === 0 ? 'highlight' : ''}">
-                               <div>-</div> <div class=" flex-1 break-all overflow-wrap-anywhere">${cell}</div> 
+                               <div>-</div> <div class=" flex-1 break-words overflow-wrap-anywhere">${cell}</div> 
                             </div>
                         `).join('')}
                     </div>
@@ -508,7 +541,7 @@ function renderBooking(booking){
                                     ${booking.title}
                                 </div>
                                 <ul>
-                                    ${booking.items.map(item => `<li class="flex-1 break-all overflow-wrap-anywhere">${item}</li>`).join('')}
+                                    ${booking.items.map(item => `<li class="flex-1 break-words overflow-wrap-anywhere">${item}</li>`).join('')}
                                 </ul>
                     </div>
                     `
@@ -529,7 +562,7 @@ function rendernotes(notes){
                                     ${notes.title}
                                 </div>
                                 <ul>
-                                    ${notes.items.map(item => `<li class="flex-1 break-all overflow-wrap-anywhere">${item}</li>`).join('')}
+                                    ${notes.items.map(item => `<li class="flex-1 break-words overflow-wrap-anywhere">${item}</li>`).join('')}
                                 </ul>
                             </div>
                     `
@@ -640,7 +673,7 @@ pkg.footer.text="لطلب الباقه عبر "
                         <div class="  ${i%2==0?"bg-primary/10":"bg-primary/20"} " >
                             
                             <div class="text-[16px] max-h-[40px] h-[40px] min-h-[40px] p-2 overflow-hidden  ${i%2==0?"bg-primary/90":"bg-primary"} font-bold text-right text-white">${col.title}</div>
-                            <div class="text-gray-600 text-[10px]  break-all overflow-wrap-anywhere text-sm ">${runderRows(col.title)}</div>
+                            <div class="text-gray-600 text-[10px]  break-words overflow-wrap-anywhere text-sm ">${runderRows(col.title)}</div>
                         
                         </div>
       `).join('')}
