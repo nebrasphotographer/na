@@ -5,14 +5,14 @@
 <meta property="og:title" content=" نبراس العزي - معرض تصوير">
 <meta property="og:description" content=" مصورة محترفة متخصصة في التصوير الفوتوغرافي والفيديو. خبرة تزيد عن 5 سنوات في تصوير المناسبات والبورتريه والمنتجات. أسعى دائماً لتقديم أفضل جودة وإبداع في كل عمل أقدمه. ">
 <meta property="og:type" content="website">
-<meta property="og:image" content="https://mysite.nebrasphotographer.workers.dev/profile/nebr.jpg">
+<meta property="og:image" content="https://mysite.nebrasphotographer.workers.dev/profile/nnbr.jpeg">
     <meta name="theme-color" content="#3B6E74">
 
     
     <title>معرض المصوّر</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&amp;display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/output.min.css">
+    <link rel="stylesheet" href="assets/css/output2.min.css">
    <link rel="stylesheet" href="assets/css/style.css">
    
    <script src="assets/js/main.js">  </script>
@@ -80,8 +80,23 @@
 
  
     <!-- ==================== GALLERY SECTION ==================== -->
-    <section id="gallery" class="py-20 bg-black/50">
-        <div class="container mx-auto px-4">
+    <section id="gallery" class="py-20 relative bg-black/50">
+
+
+
+        <div  class="h-[98vh] w-[98vw] absolute flex justify-center items-center z-20 bg-black" id="loader">
+
+            <div class="loader" >
+  <div class="loader_cube loader_cube--color"></div>
+   <div class="loader_cube loader_cube--glowing"></div>
+</div>
+
+        </div>
+        
+
+
+
+        <div class="container  mx-auto px-4">
 
             <div class="lg:w-full mx-auto mt-5 mb-20 animate-fade-in-up stagger-4">
                     <div class="carousel-container rounded-2xl  overflow-hidden shadow-2xl" id="hero-carousel">
@@ -624,6 +639,19 @@
                     el.style.opacity = '1';
                 });
             }, 100);
+
+
+
+             setTimeout(() => {
+                const loader= document.getElementById("loader")
+              if (loader){
+                    // alert(loader)
+                    loader.classList.add("hidden")
+                }
+               
+            }, 2000);
+
+
         });
     </script>
 

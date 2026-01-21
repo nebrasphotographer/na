@@ -5,7 +5,7 @@
     <meta property="og:title" content=" نبراس العزي - معرض تصوير">
 <meta property="og:description" content=" مصورة محترفة متخصصة في التصوير الفوتوغرافي والفيديو. خبرة تزيد عن 5 سنوات في تصوير المناسبات والبورتريه والمنتجات. أسعى دائماً لتقديم أفضل جودة وإبداع في كل عمل أقدمه. ">
 <meta property="og:type" content="website">
-<meta property="og:image" content="https://mysite.nebrasphotographer.workers.dev/profile/nebr.jpg">
+<meta property="og:image" content="https://mysite.nebrasphotographer.workers.dev/profile/nnbr.jpeg">
     <meta name="theme-color" content="#3B6E74">
 
     
@@ -163,9 +163,105 @@
 
     <!-- ==================== PACKAGES SECTION ==================== -->
     <section id="packages" class="py-20 relative">
+
+
+        <div  class="h-[98vh] w-[98vw] absolute flex justify-center items-center z-20 bg-black" id="loader">
+
+            <div class="loader" >
+  <div class="loader_cube loader_cube--color"></div>
+   <div class="loader_cube loader_cube--glowing"></div>
+</div>
+
+        </div>
+        
+
+
+
         <div class="absolute inset-0 bg-gradient-to-b from-black/50 to-transparent"></div>
         <div class="container px-4 md:mx-auto md:px-4 relative z-10">
            <div class=" my-2 px-1 flex flex-col md:flex-row gap-4" id="account-container"></div>
+
+
+
+           <div class="min-h-[50vh] flex items-center justify-center  p-2">
+  <div
+    class="w-full max-w-lg rounded-2xl shadow-xl overflow-hidden   bg-white/90  border border-[#3B6E74]/20"
+  >
+    <!-- Header -->
+    <div class="bg-[#3B6E74] text-white text-center p-6">
+      <h2 class="text-2xl font-bold tracking-wide">
+        شروط وبنود التصوير
+      </h2>
+      <p class="text-sm mt-2 text-[#D4A574]">
+        يرجى قراءة التفاصيل بعناية
+      </p>
+    </div>
+
+    <!-- Content -->
+    <div class="p-6 space-y-4 text-gray-700 text-sm leading-relaxed">
+
+      <div class="flex items-start gap-3">
+        <span class="text-[#D4AF37] text-lg">⏱</span>
+        <p>
+          <span class="font-semibold text-[#2A5359]">
+            سعر الساعة الإضافية:
+          </span>
+          10,000 ريال
+        </p>
+      </div>
+
+      <div class="flex items-start gap-3">
+        <span class="text-[#D4AF37] text-lg">🗓</span>
+        <p>
+          <span class="font-semibold text-[#2A5359]">
+            فترة تسليم الصور:
+          </span>
+          من شهر إلى شهرين
+        </p>
+      </div>
+
+      <div class="flex items-start gap-3">
+        <span class="text-[#D4AF37] text-lg">⚡</span>
+        <p>
+          <span class="font-semibold text-[#2A5359]">
+            تسليم مستعجل:
+          </span>
+          خلال 10 أيام مقابل زيادة 10,000 ريال
+        </p>
+      </div>
+
+      <div class="flex items-start gap-3">
+        <span class="text-[#D4AF37] text-lg">📸</span>
+        <p>
+          <span class="font-semibold text-[#2A5359]">
+            تصوير منفرد:
+          </span>
+          لغير الصور الجماعية بزيادة 1,000 ريال
+        </p>
+      </div>
+
+      <div class="flex items-start gap-3">
+        <span class="text-[#D4AF37] text-lg">💾</span>
+        <p>
+          <span class="font-semibold text-[#2A5359]">
+            حفظ الصور:
+          </span>
+          يتم الاحتفاظ بنسخة من الصور لمدة 6 أشهر من تاريخ المناسبة
+        </p>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="bg-[#5A9199]/10 hidden p-2 text-center">
+      <p class="text-xs text-gray-600">
+        © جميع الحقوق محفوظة
+      </p>
+    </div>
+  </div>
+</div>
+
+
+
 
             <!-- Section Header -->
             <div class="text-center mb-12">
@@ -184,9 +280,24 @@
              <div class="my-4" id="packages-tabs"
                 class="flex flex-wrap  justify-center gap-3 mb-10">
             </div>
+            
+            
+            
+            
+
+
+            
+            
             <div id="packages-grid" class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-6">
                 <!-- Packages will be injected here -->
             </div>
+
+
+
+
+
+
+
         </div>
     </section>
 
@@ -749,6 +860,7 @@ function filterPackagesByType(packages, typeKey) {
                    }
 
 
+                  
 
                 }
 
@@ -1278,10 +1390,15 @@ ${f.features.map((fe,i)=>` - ${fe}`).join("\n")}`
              buildPackageTabs(Packages, (typeKey) => {
         const filtered = filterPackagesByType(Packages, typeKey);
         renderPackages2(filtered, PhotographerInfo);
+
+         
+
+
     });
 
         const weedpacks=Packages.filter(p=>p.type.key=="weeding")
             renderPackages2(weedpacks,PhotographerInfo);
+
             // renderSteps();
             // renderPhotographerInfo();
             // renderPolicies();
@@ -1291,8 +1408,31 @@ ${f.features.map((fe,i)=>` - ${fe}`).join("\n")}`
                 document.querySelectorAll('.animate-fade-in-up').forEach(el => {
                     el.style.opacity = '1';
                 });
+
+                
+
+
             }, 100);
+
+
+
+             setTimeout(() => {
+                const loader= document.getElementById("loader")
+              if (loader){
+                    // alert(loader)
+                    loader.classList.add("hidden")
+                }
+               
+            }, 2000);
+
+            
+
+
         });
+
+
+
+
     </script>
 
 
