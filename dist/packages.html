@@ -1226,6 +1226,8 @@ pkg.footer.text="لطلب الباقه عبر "
         async function orderPackage(packageId) {
 
             location.href="order.html?id="+packageId;
+
+            return;
             // Fetch latest data to ensure we have correct info
             const Packages = await fetchData("packages_v2");
             currentPackage = Packages.find(p => p.id === packageId); // Note: verify ID matching (string vs int) if needed
