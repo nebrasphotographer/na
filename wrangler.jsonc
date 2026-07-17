@@ -1,20 +1,20 @@
  {
 	    "name": "mysite",
 	    "compatibility_date": "2026-01-03",
-      "main": "index.js",
+     
 	    "assets": {
-	      "directory": "./dist",
-        "binding": "ASSETS"
+	      "directory": "dist",
+       
     
 	    },
-        "workers_dev": true,
+       
  "observability": {
     "logs": {
       "enabled": true,
       "invocation_logs": true
     },
     "traces": {
-      "enabled": false
+      "enabled": true
     }
   }
 
