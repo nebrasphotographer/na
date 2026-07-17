@@ -7,7 +7,7 @@
                         parent+="/"
                     // جلب ملف محدد إذا تم تمرير الاسم
                     console.log(`/data/${parent}${spes}.json`)
-                    const response = await fetch(`/data/${parent}${spes}.json`);
+                    const response = await fetch(`data/${parent}${spes}.json`);
                     const data = await response.json();
                     // console.log(`بيانات ${spes}:`, data);
                     return data;
