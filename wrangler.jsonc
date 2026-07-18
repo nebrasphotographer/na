@@ -2,6 +2,7 @@
 	    "name": "mysite",
 	    "compatibility_date": "2026-07-17",
       "workers_dev": true,
+      "main":"index.js",
        "site": {
     "bucket": "./dist" // Add the directory with your static assets!
   },
